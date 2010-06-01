@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require "pdf-burst"
+PDF::Burst.new(ARGV[0]).run!

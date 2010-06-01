@@ -1,0 +1,4 @@
+.bundle
+*.swp
+*.gem
+Gemfile.lock
