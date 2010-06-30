@@ -19,15 +19,21 @@ Simple! Once you install the 'pdf-burst' gem, all you need is:
 
 By default, the PDF files will be output to your current working directory. But that's not what you want, is it?
 
-    PDF::Burst.new("document.pdf", :output_path => "/tmp").run!
+    PDF::Burst.new("document.pdf", :output => "/tmp").run!
 
 Better, huh?
 
 Another default is the page name. They'll all be nicely named like "page_1.pdf", "page_2.pdf". We let you change that too:
 
-    PDF::Burst.new("document.pdf", :page_filename => "doc.%04d").run!
+    PDF::Burst.new("document.pdf", :filename => "doc.%04d").run!
 
 Would output them like this: "doc.0001.pdf", "doc.0002.pdf", etc.
+
+If you want thumbnails to be generated for each page, just use the thumbnail option with the thumbnail size.
+
+    PDF::Burst.new("document.pdf", :thumbnail => "128x128").run!
+
+This requires ImageMagick to be installed, as it uses the 'convert' command.
 
 
 ## Special thanks
